@@ -162,6 +162,7 @@ const translations = {
       moreNote: "Don't see your city? We ship across Tamil Nadu and South India.",
       contactUs: 'Contact us',
       toFindOut: 'to find out more.',
+      mapHeading: 'Coimbatore Branch — Find Us',
     },
     contact: {
       heroTitle: 'Contact Us',
@@ -365,6 +366,7 @@ const translations = {
       moreNote: 'உங்கள் நகரம் இல்லையா? தமிழகம் மற்றும் தென்னிந்தியா முழுவதும் நாங்கள் அனுப்புகிறோம்.',
       contactUs: 'தொடர்பு கொள்ளுங்கள்',
       toFindOut: 'மேலும் அறிய.',
+      mapHeading: 'கோயம்புத்தூர் கிளை — இங்கே வாருங்கள்',
     },
     contact: {
       heroTitle: 'தொடர்பு கொள்ளுங்கள்',

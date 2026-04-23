@@ -54,7 +54,8 @@ export default function ContactPage() {
     if (!form.name.trim()) e.name = c.errRequired;
     if (!form.phone.trim()) e.phone = c.errRequired;
     else if (!PHONE_RE.test(form.phone)) e.phone = c.errPhone;
-    if (form.email && !EMAIL_RE.test(form.email)) e.email = c.errEmail;
+    if (!form.email.trim()) e.email = c.errRequired;
+    else if (!EMAIL_RE.test(form.email)) e.email = c.errEmail;
     if (!form.city.trim()) e.city = c.errRequired;
     if (!form.category) e.category = c.errRequired;
     if (form.message.length > 300) e.message = c.errMessageMax;
@@ -158,7 +159,7 @@ export default function ContactPage() {
                   </Field>
                 </div>
 
-                <Field label={c.emailFieldLabel} error={errors.email}>
+                <Field label={`${c.emailFieldLabel} ${c.required}`} error={errors.email}>
                   <input type="email" name="email" value={form.email} onChange={handleChange}
                     className={inputClass('email')} placeholder="your@email.com" />
                 </Field>

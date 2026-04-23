@@ -64,6 +64,23 @@ export default function LocationsPage() {
         </div>
       </section>
 
+      <section className="py-12 px-4 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#0d766e] mb-6 text-center">{l.mapHeading}</h2>
+          <div className="rounded-2xl overflow-hidden shadow-sm border border-slate-100 h-80">
+            <iframe
+              title="Vaibhav Surgicals Coimbatore"
+              src="https://maps.google.com/maps?q=No+159A,+Ranga+Konar+Street,+Katoor,+Coimbatore+641009,+Tamil+Nadu,+India&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       <div className="bg-[#f0fdfa] py-10 px-4 text-center">
         <p className="text-slate-600 text-sm">
           {l.moreNote}{' '}
