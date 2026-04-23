@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const branches = [
@@ -66,7 +67,7 @@ export default function LocationsPage() {
       <div className="bg-[#f0fdfa] py-10 px-4 text-center">
         <p className="text-slate-600 text-sm">
           {l.moreNote}{' '}
-          <a href="/contact" className="text-[#0d766e] font-semibold hover:underline">{l.contactUs}</a>{' '}
+          <Link href="/contact" className="text-[#0d766e] font-semibold hover:underline">{l.contactUs}</Link>{' '}
           {l.toFindOut}
         </p>
       </div>
