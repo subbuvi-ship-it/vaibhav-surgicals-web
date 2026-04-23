@@ -3,11 +3,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const branches = [
-  { city: 'Trichy', isHQ: true, address: 'Trichy, Tamil Nadu', phone: '', email: 'info@vaibhavsurgicals.com' },
-  { city: 'Coimbatore', isHQ: false, address: 'No 159A, Ranga Konar Street, Katoor, Coimbatore – 641009', phone: '', email: '' },
-  { city: 'Chennai', isHQ: false, address: 'Chennai, Tamil Nadu', phone: '', email: '' },
-  { city: 'Salem', isHQ: false, address: 'Salem, Tamil Nadu', phone: '', email: '' },
-  { city: 'Pondicherry', isHQ: false, address: 'Pondicherry', phone: '', email: '' },
+  { cityKey: 'trichy' as const, isHQ: true, address: 'Trichy, Tamil Nadu', phone: '', email: 'info@vaibhavsurgicals.com' },
+  { cityKey: 'coimbatore' as const, isHQ: false, address: 'No 159A, Ranga Konar Street, Katoor, Coimbatore – 641009', phone: '', email: '' },
+  { cityKey: 'chennai' as const, isHQ: false, address: 'Chennai, Tamil Nadu', phone: '', email: '' },
+  { cityKey: 'salem' as const, isHQ: false, address: 'Salem, Tamil Nadu', phone: '', email: '' },
+  { cityKey: 'pondicherry' as const, isHQ: false, address: 'Pondicherry', phone: '', email: '' },
 ];
 
 export default function LocationsPage() {
@@ -25,8 +25,8 @@ export default function LocationsPage() {
 
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {branches.map(({ city, isHQ, address, phone, email }) => (
-            <div key={city} className="rounded-2xl border border-slate-100 shadow-sm p-6">
+          {branches.map(({ cityKey, isHQ, address, phone, email }) => (
+            <div key={cityKey} className="rounded-2xl border border-slate-100 shadow-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-[#0d766e] flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -35,7 +35,7 @@ export default function LocationsPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="font-bold text-[#0d766e] text-lg leading-tight">{city}</h2>
+                  <h2 className="font-bold text-[#0d766e] text-lg leading-tight">{tr.cities[cityKey]}</h2>
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${isHQ ? 'bg-[#dc2626] text-white' : 'bg-[#f0fdfa] text-[#0d766e]'}`}>
                     {isHQ ? l.headquarters : l.branch}
                   </span>
